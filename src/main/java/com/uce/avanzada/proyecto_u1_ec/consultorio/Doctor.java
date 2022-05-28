@@ -3,6 +3,7 @@ package com.uce.avanzada.proyecto_u1_ec.consultorio;
 public class Doctor {
     private String nombre;
     private String apellido;
+    private String edad;
 
     // Set y Get
     public String getNombre() {
@@ -21,5 +22,5 @@ public class Doctor {
         this.apellido = apellido;
     }
 
-    
+
 }
