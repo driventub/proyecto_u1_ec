@@ -2,8 +2,7 @@ package com.uce.avanzada.proyecto_u1_pa.consultorio;
 
 import java.time.LocalDateTime;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +15,7 @@ public class CitaMedica {
     private Doctor doctor;
     private Paciente paciente;
 
+    // 2. DI por constructor
     public CitaMedica(Doctor doctor, Paciente paciente) {
         this.doctor  = doctor;
         this.paciente = paciente;
