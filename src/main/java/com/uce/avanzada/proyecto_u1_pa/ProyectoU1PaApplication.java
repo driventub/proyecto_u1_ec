@@ -3,15 +3,15 @@ package com.uce.avanzada.proyecto_u1_pa;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import com.uce.avanzada.proyecto_u1_pa.ejemplo1.CodigoPostal;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo1.CodigoPostal2;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo1.CodigoPostal3;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo2.Cajero;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo2.Cajero2;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo2.Cajero3;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo3.Reserva;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo3.Reserva2;
-import com.uce.avanzada.proyecto_u1_pa.ejemplo3.Reserva3;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.Cajero;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.Cajero2;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.Cajero3;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.CodigoPostal;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.CodigoPostal2;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.CodigoPostal3;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.Reserva;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.Reserva2;
+import com.uce.avanzada.proyecto_u1_pa.tarea5.Reserva3;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

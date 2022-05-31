@@ -1,4 +1,4 @@
-package com.uce.avanzada.proyecto_u1_pa.ejemplo2;
+package com.uce.avanzada.proyecto_u1_pa.tarea5;
 
 import java.math.BigDecimal;
 
@@ -6,17 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Cajero {
+public class Cajero3 {
     
-    @Autowired
+    
     private Cliente cliente;
 
-    @Autowired
+    
     private Comida comida;
 
     private BigDecimal total;
-
-    
 
     public String  realizarOrden(String nombre, String cedula, String tarjetaCredito, String nombreComida, BigDecimal precio, Boolean promocion) {
         this.cliente.setCedula(cedula);
@@ -29,7 +27,7 @@ public class Cajero {
         
         this.total =precio.add(precio.multiply(new BigDecimal("0.12")));
         
-        return "Orden atributos generada";
+        return "Orden setters generada";
     }
 
     // Set y Get
@@ -39,7 +37,7 @@ public class Cajero {
     }
 
 
-
+    @Autowired
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
@@ -51,7 +49,7 @@ public class Cajero {
     }
 
 
-
+    @Autowired
     public void setComida(Comida comida) {
         this.comida = comida;
     }

@@ -1,4 +1,4 @@
-package com.uce.avanzada.proyecto_u1_pa.ejemplo2;
+package com.uce.avanzada.proyecto_u1_pa.tarea5;
 
 import org.springframework.stereotype.Component;
 
