@@ -1,29 +1,29 @@
 package com.uce.avanzada.proyecto_u1_pa.repository;
 
-import com.uce.avanzada.proyecto_u1_pa.modelo.Estudiante;
-
 import org.springframework.stereotype.Repository;
 
+import com.uce.avanzada.proyecto_u1_pa.modelo.Matricula;
+
 @Repository
-public class EstudianteRepositoryImpl implements IEstudianteRepository {
+public class MatriculaRepositoryImpl implements IMatriculaRepository {
 
     @Override
-    public void insertar(Estudiante e) {
+    public void insertar(Matricula e) {
         // Aqui se realiza insercion
         System.out.println("Se ha insertado en la base " + e);
         
     }
 
     @Override
-    public Estudiante buscar(String apellido) {
-        System.out.println("Se ha buscado en la base " + apellido);
-        Estudiante e = new Estudiante();
-        e.setApellido(apellido);
+    public Matricula buscar(String numero) {
+        System.out.println("Se ha buscado en la base " + numero);
+        Matricula e = new Matricula();
+        e.setNumero(numero);
         return e;
     }
 
     @Override
-    public void actualizar(Estudiante e) {
+    public void actualizar(Matricula e) {
         System.out.println("Se ha actualizado en la base " + e);
         
     }
