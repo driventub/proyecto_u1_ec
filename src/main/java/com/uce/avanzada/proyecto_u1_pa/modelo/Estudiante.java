@@ -2,6 +2,7 @@ package com.uce.avanzada.proyecto_u1_pa.modelo;
 
 public class Estudiante {
 
+    // Comentario
     private String cedula;
     private String nombre;
     private String apellido;
