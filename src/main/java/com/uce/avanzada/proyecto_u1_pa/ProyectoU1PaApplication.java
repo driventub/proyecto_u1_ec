@@ -47,6 +47,8 @@ public class ProyectoU1PaApplication implements CommandLineRunner{
 
 		this.estudianteService.ingresarEstudiante(e1);
 
+		
+
 		// Actualizar
 		e.setCedula("1787873400-4");
 		this.estudianteService.actualizarEstudiante(e);
@@ -58,7 +60,74 @@ public class ProyectoU1PaApplication implements CommandLineRunner{
 
 		this.estudianteService.borrarEstudiante("178353400-5");
 
+
+		// Tarea 6
 		
+		// Lista de materias
+		List<Materia> lista = new ArrayList<>();
+
+		Materia m1 = new Materia();
+		Materia m2 = new Materia();
+		Materia m3 = new Materia();
+
+		lista.add(m1);
+		lista.add(m2);
+		lista.add(m3);
+		
+
+		m1.setNombre("Matematica");
+		m1.setSemestre("Septimo");
+		
+		
+		
+
+		m2.setNombre("Fisica");
+		m2.setSemestre("Sexto");
+
+		m3.setNombre("Quimica");
+		m3.setSemestre("Septimo");
+		
+		// Insert
+		this.materiaService.ingresarMateria(m1);
+		this.materiaService.ingresarMateria(m2);
+		this.materiaService.ingresarMateria(m3);
+
+		
+		
+
+
+		// Read
+
+		this.materiaService.buscarPorSemestre("Sexto");
+
+		// Update
+
+		m1.setNombre("Matematica II");
+		m2.setNombre("Fisica II");
+		m3.setNombre("Quimica II");
+
+		// Delete
+		this.materiaService.borrarMateria("Matematica");
+
+		// Matriculacion
+		Matricula matricula = new Matricula();
+		matricula.setNumero("73773771");
+		matricula.setEstudiante(e);
+		matricula.setMateria(lista);
+
+		// Insert
+		this.matriculaService.ingresarMatricula(matricula);
+
+		// Read
+		this.matriculaService.buscarPorNumero("73773771");
+
+		// Update
+
+		matricula.setNumero("12345");;
+		this.matriculaService.actualizarMatricula(matricula);
+
+		// Delete
+		this.matriculaService.borrarMatricula("12345");
 	}	
 
 }

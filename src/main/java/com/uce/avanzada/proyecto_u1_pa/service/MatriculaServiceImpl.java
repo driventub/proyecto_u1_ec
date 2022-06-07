@@ -32,8 +32,8 @@ public class MatriculaServiceImpl implements IMatriculaService{
     }
 
     @Override
-    public void borrarMatricula(String cedula) {
-        this.MatriculaRepo.eliminar(cedula);
+    public void borrarMatricula(String numero) {
+        this.MatriculaRepo.eliminar(numero);
         
     }
 

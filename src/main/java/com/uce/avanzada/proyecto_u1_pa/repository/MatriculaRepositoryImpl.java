@@ -29,8 +29,8 @@ public class MatriculaRepositoryImpl implements IMatriculaRepository {
     }
 
     @Override
-    public void eliminar(String cedula) {
-        System.out.println("Se ha eliminado de la base " + cedula);
+    public void eliminar(String numero) {
+        System.out.println("Se ha eliminado de la base " + numero);
         
     }
     
