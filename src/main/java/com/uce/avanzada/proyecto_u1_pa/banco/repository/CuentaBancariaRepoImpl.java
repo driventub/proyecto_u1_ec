@@ -13,7 +13,7 @@ public class CuentaBancariaRepoImpl implements ICuentaBancariaRepo {
     public void actualizar(CuentaBancaria c) {
         // Aqui construir SQLs
         System.out.println("Cuenta Bancaria actualizada a: " + c);
-        
+
     }
 
     @Override
@@ -24,5 +24,17 @@ public class CuentaBancariaRepoImpl implements ICuentaBancariaRepo {
         c.setSaldo(new BigDecimal("100"));
         return c;
     }
-    
+
+    @Override
+    public void insertar(CuentaBancaria e) {
+        System.out.println("Se ha insertado en la base " + e);
+
+    }
+
+    @Override
+    public void eliminar(String numero) {
+        System.out.println("Se ha eliminado de la base " + numero);
+
+    }
+
 }

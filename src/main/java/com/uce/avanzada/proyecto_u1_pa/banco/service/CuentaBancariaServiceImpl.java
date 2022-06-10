@@ -23,5 +23,18 @@ public class CuentaBancariaServiceImpl implements ICuentaBancariaService{
         
         return this.bancariaRepo.buscar(numero);
     }
+
+    @Override
+    public void ingresarCuentaBancaria(CuentaBancaria e) {
+        this.bancariaRepo.insertar(e);
+        
+    }
+
+    @Override
+    public void borrarCuentaBancaria(String numero) {
+        this.bancariaRepo.eliminar(numero);
+        
+    }
+    
     
 }

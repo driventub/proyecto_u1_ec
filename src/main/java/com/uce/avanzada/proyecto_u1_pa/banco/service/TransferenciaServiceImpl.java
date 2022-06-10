@@ -30,7 +30,7 @@ public class TransferenciaServiceImpl implements ITransferenciaService{
         
         CuentaBancaria cDestino = this.bancariaService.buscar(ctaDestino);
         BigDecimal saldoDestino = cDestino.getSaldo();
-        BigDecimal nuevaSaldoDestino = saldoDestino.subtract(monto);
+        BigDecimal nuevaSaldoDestino = saldoDestino.add(monto);
         cDestino.setSaldo(nuevaSaldoDestino);
         this.bancariaService.actualizar(cDestino);
 
@@ -41,5 +41,54 @@ public class TransferenciaServiceImpl implements ITransferenciaService{
         t.setFechaTransferencia(LocalDateTime.now());
         this.transferenciaRepo.insertar(t);
     }
+
+    @Override
+    public void ingresarTransferencia(Transferencia e) {
+        this.transferenciaRepo.insertar(e);
+        
+    }
     
+    @Override
+    public Transferencia buscarPorNumCuenta(String numCuenta) {
+        // TODO Auto-generated method stub
+        return this.transferenciaRepo.buscar(numCuenta);
+    }
+    
+    @Override
+    public void actualizarTransferencia(Transferencia e) {
+        this.transferenciaRepo.actualizar(e);
+        
+    }
+    
+    @Override
+    public void borrarTransferencia(String numCuenta) {
+        this.transferenciaRepo.eliminar(numCuenta);
+    
+    
+}
+    // Como solo necesito una cuenta, no es necesario mandar a buscar otra,
+    // El numero de cuenta origen utilizaria el numero de Cuenta, y la cuenta destino ya que es el usuario que realiza
+    // el retiro quedaria como nula
+    @Override
+    public void realizarRetiro(String numCuenta, BigDecimal monto) {
+        CuentaBancaria c = this.bancariaService.buscar(numCuenta);
+        
+        
+        BigDecimal retiro = c.getSaldo();
+
+        // lo unico que tiene que hacer es quitar dinero
+        BigDecimal nuevoRetiro = retiro.subtract(monto);
+        c.setSaldo(nuevoRetiro);
+        this.bancariaService.actualizar(c);
+
+        System.out.println("Se ha retirado del numero de cuenta: " + numCuenta + " el monto: " + monto);
+
+        Transferencia t = new Transferencia();
+        t.setNumCuentaOrigen(numCuenta);
+        
+        t.setMontoTransferir(monto);
+        t.setFechaTransferencia(LocalDateTime.now());
+        this.transferenciaRepo.insertar(t);
+
+    }
 }

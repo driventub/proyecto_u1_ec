@@ -9,9 +9,29 @@ public class TransferenciaRepoImpl implements ITransferenciaRepo {
 
     @Override
     public void insertar(Transferencia t) {
-        
-        System.out.println("Aqui se inserta la transferencia a la base de datos");
-        
+
+        System.out.println("Aqui se inserta la transferencia a la base de datos" + t);
+
     }
-    
+
+    @Override
+    public Transferencia buscar(String numCuenta) {
+        System.out.println("Se ha buscado en la base " + numCuenta);
+        Transferencia e = new Transferencia();
+        e.setNumCuentaDestin(numCuenta);
+        return e;
+    }
+
+    @Override
+    public void actualizar(Transferencia e) {
+        System.out.println("Se ha actualizado en la base " + e);
+
+    }
+
+    @Override
+    public void eliminar(String numCuenta) {
+        System.out.println("Se ha eliminado de la base " + numCuenta);
+
+    }
+
 }

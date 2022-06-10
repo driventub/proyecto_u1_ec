@@ -11,7 +11,7 @@ import com.uce.avanzada.proyecto_u1_pa.banco.modelo.Deposito;
 import com.uce.avanzada.proyecto_u1_pa.banco.repository.IDepositoRepo;
 
 @Service
-public class DepositoServiceImpl implements IDepositoService{
+public class DepositoServiceImpl implements IDepositoService {
 
     @Autowired
     private ICuentaBancariaService bancariaService;
@@ -32,7 +32,30 @@ public class DepositoServiceImpl implements IDepositoService{
         deposito.setMonto(monto);
 
         this.depositoRepo.insertarDeposito(deposito);
-        
+
     }
-    
+
+    @Override
+    public void ingresarDeposito(Deposito e) {
+        this.depositoRepo.insertarDeposito(e);
+
+    }
+
+    @Override
+    public Deposito buscarPorNumCuenta(String numCuenta) {
+        // TODO Auto-generated method stub
+        return this.depositoRepo.buscar(numCuenta);
+    }
+
+    @Override
+    public void actualizarDeposito(Deposito e) {
+        this.depositoRepo.actualizar(e);
+
+    }
+
+    @Override
+    public void borrarDeposito(String cedula) {
+        this.depositoRepo.eliminar(cedula);
+
+    }
 }
