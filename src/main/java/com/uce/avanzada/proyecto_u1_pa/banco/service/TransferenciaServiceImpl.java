@@ -2,6 +2,8 @@ package com.uce.avanzada.proyecto_u1_pa.banco.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,26 +71,18 @@ public class TransferenciaServiceImpl implements ITransferenciaService{
     // Como solo necesito una cuenta, no es necesario mandar a buscar otra,
     // El numero de cuenta origen utilizaria el numero de Cuenta, y la cuenta destino ya que es el usuario que realiza
     // el retiro quedaria como nula
+  
     @Override
-    public void realizarRetiro(String numCuenta, BigDecimal monto) {
-        CuentaBancaria c = this.bancariaService.buscar(numCuenta);
-        
-        
-        BigDecimal retiro = c.getSaldo();
+    public List<Transferencia> consultar(String cuenta, LocalDateTime fechaInicio, LocalDateTime fechaRetiro) {
+        List<Transferencia> listaConsultada = new ArrayList<>();
+        Transferencia t1 = new Transferencia();
+        t1.setFechaTransferencia(LocalDateTime.now());
+        t1.setMontoTransferir(new BigDecimal("100"));
+        t1.setNumCuentaOrigen("789");
+        t1.setNumCuentaDestin("123");
 
-        // lo unico que tiene que hacer es quitar dinero
-        BigDecimal nuevoRetiro = retiro.subtract(monto);
-        c.setSaldo(nuevoRetiro);
-        this.bancariaService.actualizar(c);
 
-        System.out.println("Se ha retirado del numero de cuenta: " + numCuenta + " el monto: " + monto);
-
-        Transferencia t = new Transferencia();
-        t.setNumCuentaOrigen(numCuenta);
-        
-        t.setMontoTransferir(monto);
-        t.setFechaTransferencia(LocalDateTime.now());
-        this.transferenciaRepo.insertar(t);
-
+        listaConsultada.add(t1);
+        return listaConsultada;
     }
 }

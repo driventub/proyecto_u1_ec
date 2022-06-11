@@ -1,6 +1,8 @@
 package com.uce.avanzada.proyecto_u1_pa.banco.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import com.uce.avanzada.proyecto_u1_pa.banco.modelo.Transferencia;
 
@@ -21,6 +23,8 @@ public interface ITransferenciaService {
 
     // Funcionalidad para realizar retiro
 
-    public void realizarRetiro(String numCuenta, BigDecimal monto);
+    
+
+    public List<Transferencia> consultar(String cuenta, LocalDateTime fechaInicio, LocalDateTime fechaRetiro);
 
 }
