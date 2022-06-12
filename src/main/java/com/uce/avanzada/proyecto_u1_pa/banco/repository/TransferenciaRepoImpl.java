@@ -1,5 +1,8 @@
 package com.uce.avanzada.proyecto_u1_pa.banco.repository;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.uce.avanzada.proyecto_u1_pa.banco.modelo.Transferencia;
@@ -33,5 +36,13 @@ public class TransferenciaRepoImpl implements ITransferenciaRepo {
         System.out.println("Se ha eliminado de la base " + numCuenta);
 
     }
+
+    @Override
+    public List<Transferencia> consultar(String cuenta, LocalDateTime fechaInicio, LocalDateTime fechaRetiro) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    
 
 }

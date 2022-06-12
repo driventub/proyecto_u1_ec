@@ -5,8 +5,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.uce.avanzada.proyecto_u1_pa.banco.modelo.Retiro;
 
+@Repository
 public class RetiroRepoImpl implements IRetiroRepo{
     @Override
     public void insertarRetiro(Retiro d) {
@@ -37,7 +40,7 @@ public class RetiroRepoImpl implements IRetiroRepo{
     @Override
     public void retiro(String numCuenta, LocalDateTime fechaRetiro, BigDecimal monto) {
        
-    
+        System.out.println("Se ha retirado: " + monto + " de numero de cuenta: " + numCuenta);
        
     
 
