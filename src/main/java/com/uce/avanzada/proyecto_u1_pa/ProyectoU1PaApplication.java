@@ -28,7 +28,7 @@ public class ProyectoU1PaApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		BigDecimal interes = this.bancaria.calcularInteres("123");
-		System.out.println(interes);
+		System.out.println("El interes es: " + interes);
 	
 	}	
 
