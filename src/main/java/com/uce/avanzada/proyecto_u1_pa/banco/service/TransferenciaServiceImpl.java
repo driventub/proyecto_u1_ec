@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.uce.avanzada.proyecto_u1_pa.banco.modelo.CuentaBancaria;
@@ -17,6 +18,7 @@ import com.uce.avanzada.proyecto_u1_pa.banco.repository.ITransferenciaRepo;
 public class TransferenciaServiceImpl implements ITransferenciaService{
 
     @Autowired
+    @Qualifier("corriente")
     private ICuentaBancariaService bancariaService;
 
     @Autowired

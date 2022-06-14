@@ -1,5 +1,7 @@
 package com.uce.avanzada.proyecto_u1_pa.banco.service;
 
+import java.math.BigDecimal;
+
 import com.uce.avanzada.proyecto_u1_pa.banco.modelo.CuentaBancaria;
 
 public interface ICuentaBancariaService {
@@ -10,4 +12,6 @@ public interface ICuentaBancariaService {
     public void ingresarCuentaBancaria(CuentaBancaria e);
 
     public void borrarCuentaBancaria(String cedula);
+
+    public BigDecimal calcularInteres(String numCuenta, BigDecimal saldo);
 }

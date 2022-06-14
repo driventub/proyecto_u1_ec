@@ -22,6 +22,7 @@ public class CuentaBancariaRepoImpl implements ICuentaBancariaRepo {
         CuentaBancaria c = new CuentaBancaria();
         c.setNumero(numero);
         c.setSaldo(new BigDecimal("100"));
+        c.setTipo("C");
         return c;
     }
 
