@@ -13,8 +13,11 @@ public class MateriaServiceImpl implements IMateriaService{
     @Autowired
     private IMateriaRepository MateriaRepo;
 
+    
+
     @Override
     public void ingresarMateria(Materia e) {
+        
         this.MateriaRepo.insertar(e);
         
     }
